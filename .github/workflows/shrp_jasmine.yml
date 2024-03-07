@@ -44,11 +44,11 @@ jobs:
             cd
             mkdir SHRP
             cd SHRP
-            repo init -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0 --depth=1
+            repo init -u git:github.com/SHRP-Reborn/manifest.git -b shrp-12.1 --depth=1
             repo sync -j8 --force-sync --optimized-fetch --no-clone-bundle
             cd
             cd SHRP
-            git clone https://github.com/Rahuh-960/android_device_xiaomi_jasmine_sprout-twrp.git device/xiaomi/jasmine_sprout
+            git clone https://github.com/LynxSlash/recovery_device_redmi_rosemary -b android-12.1
             
       - name: Now Lets build Ofox
         run: |
@@ -62,8 +62,8 @@ jobs:
       - name: Uploading using Bash Upload
         run: |
             cd
-            mv SHRP/out/target/product/jasmine_sprout/OrangeFox-Unofficial-wayne.img ~
-            mv SHRP/out/target/product/jasmine_sprout/OrangeFox-Unofficial-wayne.zip ~
+            mv SHRP/out/target/product/rosemary/SHRP-Unofficial-rosemary.img ~
+            mv SHRP/out/target/product/jasmine_sprout/OrangeFox-Unofficial-rosemary.zip ~
             curl https://bashupload.com/Ofox-Unofficial.zip --data-binary @OrangeFox-Unofficial-wayne.zip
             curl https://bashupload.com/Ofox-Unofficial.img --data-binary @OrangeFox-Unofficial-wayne.img
             
